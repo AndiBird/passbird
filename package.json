@@ -21,5 +21,9 @@
   "bin": {
     "passbird": "./bin/global.js"
   },
-  "preferGlobal": true
+  "preferGlobal": true,
+  "dependencies": {
+    "inquirer": "^9.2.21"
+  },
+  "type": "module"
 }
