@@ -1,7 +1,7 @@
 ```markdown
 # Passbird
 
-Passbird is a personal npm library for generating keys.
+Passbird is an npm library for generating keys.
 
 ## Installation
 
