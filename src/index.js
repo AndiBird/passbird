@@ -17,6 +17,4 @@ function generatePassword(length, includeUppercase, includeNumbers, includeSymbo
     return password;
 }
 
-console.log(generatePassword());
-
 module.exports = generatePassword;

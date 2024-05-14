@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
+  "keywords": ["password", "generator", "keygen", "security", "npm", "library", "node", "javascript"],
   "author": "Andrés Pájaro <andresmpajaro@gmail.com>",
   "license": "ISC",
   "bin": {
