@@ -1,6 +1,6 @@
 {
   "name": "passbird",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A personal npm's library for keygen",
   "main": "index.js",
   "scripts": {
@@ -12,5 +12,5 @@
   "bin": {
     "passbird": "./bin/global.js"
   },
-    "preferGlobal": true
+  "preferGlobal": true
 }
