@@ -32,9 +32,17 @@ For example, to generate a 10-character key with uppercase letters, numbers, and
 passbird 10 true true true
 ```
 
+## Contributing
+
+We welcome contributions to Passbird! If you're interested in improving this library, there are many ways you can contribute:
+
+- Submit bug reports and feature requests on our [GitHub issues page](https://github.com/AndiBird/passbird/issues).
+- Review and improve our documentation.
+- Review and refactor our existing code.
+- Add new features and enhancements.
+
+To get started, please fork the [Passbird repository](https://github.com/AndiBird/passbird.git), make your changes, and submit a pull request. We look forward to collaborating with you!
+
 ## License
 
 Passbird is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
-```
-
-This guide provides information on how to install and use Passbird, as well as a link to the license.
