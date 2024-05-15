@@ -71,4 +71,4 @@ To get started, please fork the [Passbird repository](https://github.com/AndiBir
 
 ## License
 
-Passbird is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
+Passbird is licensed under the MIT License. See the [LICENSE](https://github.com/git/git-scm.com/blob/main/MIT-LICENSE.txt) file for more details.
