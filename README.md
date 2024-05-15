@@ -38,7 +38,7 @@ If you choose the "Default" option, you will be asked the following questions:
 ? Include numbers? Yes
 ? Include symbols? Yes
 ```
-After answering these questions, Passbird will generate a random password for you, like this: :v/rz!p6SR9N.
+After answering these questions, Passbird will generate a random password for you, like this: :v/rz!p6SR
 
 ## Memorable Password
 
