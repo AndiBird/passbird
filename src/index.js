@@ -1,3 +1,5 @@
+import axios from 'axios';
+import sha1 from 'sha1';
 import { createRequire } from 'module';
 const require = createRequire(import.meta.url);
 const readline = require('readline');
@@ -34,7 +36,10 @@ export function generatDefaultePassword(length, includeUppercase, includeNumbers
             }
         }
     }
-    return password;
+    // print the password
+    console.log(password);
+    // validate the password
+    validatePassword(password);
 }
 
 // generate a memorable password (memorable type)
@@ -71,10 +76,10 @@ export function generateMemorablePassword(includeUppercase, includeNumbers, incl
                 }
             }
         }
-        // shuffle the password to make it more secure
-        //shufflePassword(password);
         // print the password
         console.log(password);
+        // validate the password
+        validatePassword(password);
         // ask the user if is satisfied with the password
         rl.question('Are you satisfied with the password? (y/n) ', (answer) => {
             // if the user is not satisfied, generate a new password
@@ -90,6 +95,21 @@ export function generateMemorablePassword(includeUppercase, includeNumbers, incl
     });
 }
 
-function shufflePassword(password) {
-    return password.split('').sort(() => Math.random() - 0.5).join('');
-}
+export function validatePassword(password) {
+    // Convert password to hash SHA-1
+    let hash = sha1(password).toUpperCase();
+
+    // Send first 5 char to API HIB
+    axios.get(`https://api.pwnedpasswords.com/range/${hash.substring(0, 5)}`)
+        .then(response => {
+            // Look for complete hash in the list of hashes returned by the API
+            if (response.data.includes(hash.substring(5))) {
+                console.warn('\nWarn:\nPassword has been exposed in previous data breaches.');
+            } else {
+                console.log('\nNote:\nPassword is secure and is not exposed in data breaches.');
+            }
+        })
+        .catch(error => {
+            console.error('\nError while validating generated password:', error);
+        });
+};

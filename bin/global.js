@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import { generatDefaultePassword, generateMemorablePassword } from '../src/index.js';
+import { generatDefaultePassword, generateMemorablePassword, validatePassword } from '../src/index.js';
 import inquirer from 'inquirer';
 
 
@@ -8,7 +8,7 @@ let questions = [
         type: 'list',
         name: 'passwordType',
         message: 'What type of password do you want to generate?',
-        choices: ['Default', 'Memorable'],
+        choices: ['Default', 'Memorable', 'Validate'],
         filter: function (val) {
             return val.toLowerCase();
         }
@@ -74,13 +74,24 @@ let questions = [
         when: function (answers) {
             return answers.passwordType === 'memorable';
         }
+    },
+    {
+        type: 'input',
+        name: 'password',
+        message: 'Insert password to validate:',
+        default: 'Good luck!',
+        when: function (answers) {
+            return answers.passwordType === 'validate';
+        }
     }
 ];
 
 inquirer.prompt(questions).then(answers => {
     if (answers.passwordType === 'default') {
-        console.log(generatDefaultePassword(answers.length, answers.includeUppercase, answers.includeNumbers, answers.includeSymbols));
+        generatDefaultePassword(answers.length, answers.includeUppercase, answers.includeNumbers, answers.includeSymbols);
+    } else if (answers.passwordType === 'memorable') {
+        generateMemorablePassword(answers.includeUppercase, answers.includeNumbers, answers.includeSymbols);
     } else {
-        console.log(generateMemorablePassword(answers.includeUppercase, answers.includeNumbers, answers.includeSymbols));
+        validatePassword(answers.password);
     }
 });
