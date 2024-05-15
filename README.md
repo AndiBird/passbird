@@ -13,23 +13,49 @@ npm install -g passbird
 
 ## Usage
 
-Passbird can be used from the command line with the following syntax:
+To use Passbird, start by running:
 
 ```sh
-passbird <length> <includeUppercase> <includeNumbers> <includeSymbols>
+passbird start
 ```
 
-Where:
-
-- `<length>` is the length of the key to be generated.
-- `<includeUppercase>` is a boolean (`true` or `false`) indicating whether to include uppercase letters in the key.
-- `<includeNumbers>` is a boolean (`true` or `false`) indicating whether to include numbers in the key.
-- `<includeSymbols>` is a boolean (`true` or `false`) indicating whether to include symbols in the key.
-
-For example, to generate a 10-character key with uppercase letters, numbers, and symbols, you would run:
+You will be asked to choose the type of password you want to generate:
 
 ```sh
-passbird 10 true true true
+? What type of password do you want to generate? (Use arrow keys)
+❯ Default 
+  Memorable 
+```
+
+## Default Password
+
+If you choose the "Default" option, you will be asked the following questions:
+
+```sh
+? What type of password do you want to generate? Default
+? How long do you want the password to be? 10
+? Include uppercase letters? Yes
+? Include numbers? Yes
+? Include symbols? Yes
+```
+After answering these questions, Passbird will generate a random password for you, like this: :v/rz!p6SR9N.
+
+## Memorable Password
+
+If you choose the "Memorable" option, you will be asked the following questions:
+
+```sh
+? What type of password do you want to generate? Memorable
+? Include uppercase letters? Yes
+? Include numbers? Yes
+? Include symbols? Yes
+Please, enter the words separated by commas: Andrés, Lina
+```
+After answering these questions, Passbird will generate a memorable password for you, like this: AndrésdLina16M.. If you're not satisfied with the password, you can choose to generate a new one:
+
+```sh
+Are you satisfied with the password? (y/n) n
+Please, enter the words separated by commas:
 ```
 
 ## Contributing
