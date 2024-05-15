@@ -1,7 +1,7 @@
 {
   "name": "passbird",
   "version": "2.1.0",
-  "description": "A npm's library for easy keygen",
+  "description": "A npm's library for easy keygen and easy password validation",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -36,7 +36,9 @@
     "customizable key generator",
     "memorizable password",
     "user friendly password",
-    "password customizable"
+    "password customizable",
+    "password validation",
+    "password validator"
   ],
   "author": "Andrés Pájaro <andresmpajaro@gmail.com>",
   "license": "ISC",
