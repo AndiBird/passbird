@@ -49,6 +49,33 @@ let questions = [
         }
     },
     {
+        type: 'confirm',
+        name: 'includeUppercase',
+        message: 'Include uppercase letters?',
+        default: true,
+        when: function(answers) {
+            return answers.passwordType === 'memorable';
+        }
+    },
+    {
+        type: 'confirm',
+        name: 'includeNumbers',
+        message: 'Include numbers?',
+        default: true,
+        when: function(answers) {
+            return answers.passwordType === 'memorable';
+        }
+    },
+    {
+        type: 'confirm',
+        name: 'includeSymbols',
+        message: 'Include symbols?',
+        default: true,
+        when: function(answers) {
+            return answers.passwordType === 'memorable';
+        }
+    },
+    {
         type: 'input',
         name: 'numWords',
         message: 'How many words do you want in your password?',
@@ -62,6 +89,6 @@ inquirer.prompt(questions).then(answers => {
     if (answers.passwordType === 'default') {
         console.log(generatePassword(answers.length, answers.includeUppercase, answers.includeNumbers, answers.includeSymbols));
     } else {
-        console.log(generateMemorablePassword(answers.numWords));
+        console.log(generateMemorablePassword(answers.numWords, answers.includeUppercase, answers.includeNumbers, answers.includeSymbols));
     }
 });
