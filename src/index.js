@@ -24,8 +24,6 @@ for (let i = 0; i < length; i++) {
 return password;
 }
 
-//const words = ['apple', 'banana', 'cherry', 'date', 'elderberry', 'fig', 'grape', 'honeydew'];
-
 export function generateMemorablePassword(numWords, includeUppercase, includeNumbers, includeSymbols) {    
     const rl = readline.createInterface({
         input: process.stdin,
@@ -42,25 +40,24 @@ export function generateMemorablePassword(numWords, includeUppercase, includeNum
         
         let password = '';
         for (let i = 0; i < numWords; i++) {
-          password += words[Math.floor(Math.random() * words.length)];
+          password += words[i];
           password += charSet[Math.floor(Math.random() * charSet.length)];
-        }
+          //Test if the password contains at least one number, uppercase letter and symbol
+            if (i == numWords - 1) {
+                if (includeNumbers) {
+                password += characters.numbers[Math.floor(Math.random() * characters.numbers.length)];
+                }
+                if (includeUppercase) {
+                password += characters.uppercase[Math.floor(Math.random() * characters.uppercase.length)];
+                }
+                if (includeSymbols) {
+                password += characters.symbols[Math.floor(Math.random() * characters.symbols.length)];
+                }
+            }
 
-        checkIfCharSetIncluded(password, words);
+        }
         
         console.log(password);
         rl.close();
       });
-}
-
-function checkIfCharSetIncluded(password, words, numWords) {
-    let isCharSetIncluded = 0;
-    for (let i = 0; i < words.length; i++) {
-        if(password.includes(words[i])) {
-            isCharSetIncluded = isCharSetIncluded + 1;
-            if(isCharSetIncluded === numWords) {
-                break;
-            }
-        }
-    }
 }
