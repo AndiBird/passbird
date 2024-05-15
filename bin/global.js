@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import { generatePassword, generateMemorablePassword } from '../src/index.js';
+import { generatDefaultePassword, generateMemorablePassword } from '../src/index.js';
 import inquirer from 'inquirer';
 
 
@@ -9,7 +9,7 @@ let questions = [
         name: 'passwordType',
         message: 'What type of password do you want to generate?',
         choices: ['Default', 'Memorable'],
-        filter: function(val) {
+        filter: function (val) {
             return val.toLowerCase();
         }
     },
@@ -17,7 +17,7 @@ let questions = [
         type: 'input',
         name: 'length',
         message: 'How long do you want the password to be?',
-        when: function(answers) {
+        when: function (answers) {
             return answers.passwordType === 'default';
         }
     },
@@ -26,7 +26,7 @@ let questions = [
         name: 'includeUppercase',
         message: 'Include uppercase letters?',
         default: true,
-        when: function(answers) {
+        when: function (answers) {
             return answers.passwordType === 'default';
         }
     },
@@ -35,7 +35,7 @@ let questions = [
         name: 'includeNumbers',
         message: 'Include numbers?',
         default: true,
-        when: function(answers) {
+        when: function (answers) {
             return answers.passwordType === 'default';
         }
     },
@@ -44,7 +44,7 @@ let questions = [
         name: 'includeSymbols',
         message: 'Include symbols?',
         default: true,
-        when: function(answers) {
+        when: function (answers) {
             return answers.passwordType === 'default';
         }
     },
@@ -53,7 +53,7 @@ let questions = [
         name: 'includeUppercase',
         message: 'Include uppercase letters?',
         default: true,
-        when: function(answers) {
+        when: function (answers) {
             return answers.passwordType === 'memorable';
         }
     },
@@ -62,7 +62,7 @@ let questions = [
         name: 'includeNumbers',
         message: 'Include numbers?',
         default: true,
-        when: function(answers) {
+        when: function (answers) {
             return answers.passwordType === 'memorable';
         }
     },
@@ -71,15 +71,7 @@ let questions = [
         name: 'includeSymbols',
         message: 'Include symbols?',
         default: true,
-        when: function(answers) {
-            return answers.passwordType === 'memorable';
-        }
-    },
-    {
-        type: 'input',
-        name: 'numWords',
-        message: 'How many words do you want in your password?',
-        when: function(answers) {
+        when: function (answers) {
             return answers.passwordType === 'memorable';
         }
     }
@@ -87,8 +79,8 @@ let questions = [
 
 inquirer.prompt(questions).then(answers => {
     if (answers.passwordType === 'default') {
-        console.log(generatePassword(answers.length, answers.includeUppercase, answers.includeNumbers, answers.includeSymbols));
+        console.log(generatDefaultePassword(answers.length, answers.includeUppercase, answers.includeNumbers, answers.includeSymbols));
     } else {
-        console.log(generateMemorablePassword(answers.numWords, answers.includeUppercase, answers.includeNumbers, answers.includeSymbols));
+        console.log(generateMemorablePassword(answers.includeUppercase, answers.includeNumbers, answers.includeSymbols));
     }
 });
