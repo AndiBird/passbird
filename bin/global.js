@@ -7,7 +7,7 @@ let questions = [
     {
         type: 'list',
         name: 'passwordType',
-        message: 'What type of password do you want to generate?',
+        message: 'Want to generate a default or memorable password or want to validate a password?',
         choices: ['Default', 'Memorable', 'Validate'],
         filter: function (val) {
             return val.toLowerCase();

@@ -1,7 +1,7 @@
-```markdown
-# Passbird
 
-Passbird is an npm library for generating keys.
+# Passbird 🐦‍⬛
+
+Passbird is an npm library for generating and validating passwords.
 
 ## Installation
 
@@ -22,9 +22,11 @@ passbird start
 You will be asked to choose the type of password you want to generate:
 
 ```sh
-? What type of password do you want to generate? (Use arrow keys)
-❯ Default 
-  Memorable 
+$ passbird start
+? Want to generate a default or memorable password or want to validate a password? (Use arrow keys)
+❯ Default
+  Memorable
+  Validate
 ```
 
 ## Default Password
@@ -56,6 +58,19 @@ After answering these questions, Passbird will generate a memorable password for
 ```sh
 Are you satisfied with the password? (y/n) n
 Please, enter the words separated by commas:
+```
+
+## Validate
+
+This section of the code introduces a feature that validates any given password against the Have I Been Pwned (HIBP) API.
+
+```sh
+$ passbird start
+? Want to generate a default or memorable password or want to validate a password? Validate
+? Insert password to validate: Loi
+
+Warn:
+Password has been exposed in previous data breaches.
 ```
 
 ## Contributing
