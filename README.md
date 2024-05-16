@@ -161,7 +161,7 @@ let password = 'password123';
 validatePassword(password);
 ```
 
-Note that default.js and memorable.js return the variable "password", so you can use it in your project but validate.js returns a message if the password is pawned or not.
+Note that default.js and memorable.js return the variable "password", so you can use it in your project but validate.js returns a message if the password is breached or not.
 
 # Contributing
 
