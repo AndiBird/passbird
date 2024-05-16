@@ -95,6 +95,21 @@ The command will be something like:
 node default.js 10 true true true
 ```
 
+If you want to import it and use it in your project:
+
+```sh
+import { generatDefaultePassword } from '../src/index.js';
+
+// Define arguments
+let length = 10;
+let includeUppercase = 'true';
+let includeNumbers = 'true';
+let includeSymbols = 'true';
+
+// Call the function
+let password = generatDefaultePassword(length, includeUppercase, includeNumbers, includeSymbols);
+```
+
 ## For memorable:
 
 ```sh
@@ -108,6 +123,20 @@ node memorable.js true true true
 ```
 Then, you will be ask for write the words you want to use.
 
+If you want to import it and use it in your project:
+
+```sh
+import { generateMemorablePassword } from '../src/index.js';
+
+// Define arguments
+let includeUppercase = 'true';
+let includeNumbers = 'true';
+let includeSymbols = 'true';
+
+// Call the function
+generateMemorablePassword(includeUppercase, includeNumbers, includeSymbols);
+```
+
 ## For validate:
 
 ```sh
@@ -118,6 +147,18 @@ The command will be something like:
 
 ```sh
 node validate.js password123
+```
+
+If you want to import it and use it in your project:
+
+```sh
+import { validatePassword } from '../src/index.js';
+
+// Define the password
+let password = 'password123';
+
+// Call the function
+validatePassword(password);
 ```
 
 Note that default.js and memorable.js return the variable "password", so you can use it in your project but validate.js returns a message if the password is pawned or not.
