@@ -11,7 +11,13 @@ To install Passbird globally on your system, run:
 npm install -g passbird
 ```
 
-## Usage
+To install Passbird in an specific context, run:
+
+```sh
+npm install passbird
+```
+
+## Usage (when installed globally)
 
 To use Passbird, start by running:
 
@@ -71,6 +77,44 @@ $ passbird start
 
 Warn:
 Password has been exposed in previous data breaches.
+```
+
+## Usage (when installed in an specific context)
+
+If you want to use an specific function (default, memorable or validate password), run:
+
+```sh
+node default.js <length> <includeUppercase> <includeNumbers> <includeSymbols>
+```
+
+The command will be something like:
+
+```sh
+node default.js 10 true true true
+```
+
+If an space is empty, it will be true by default.
+
+```sh
+node memorable.js <includeUppercase> <includeNumbers> <includeSymbols>
+```
+
+The command will be something like:
+
+```sh
+node memorable.js true true true
+```
+Then, you will be ask for write the words you want to use.
+If an space is empty, it will be true by default.
+
+```sh
+node validate.js <password>
+```
+
+The command will be something like:
+
+```sh
+node validate.js password123
 ```
 
 ## Contributing
