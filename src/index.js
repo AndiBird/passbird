@@ -91,7 +91,8 @@ export function generateMemorablePassword(includeUppercase, includeNumbers, incl
                 // close the interface
                 rl.close();
             }
-        });
+        })
+        return password;
     });
 }
 

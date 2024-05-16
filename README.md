@@ -3,7 +3,7 @@
 
 Passbird is an npm library for generating and validating passwords.
 
-## Installation
+# Installation
 
 To install Passbird globally on your system, run:
 
@@ -17,7 +17,7 @@ To install Passbird in an specific context, run:
 npm install passbird
 ```
 
-## Usage (when installed globally)
+# Usage (when installed globally)
 
 To use Passbird, start by running:
 
@@ -79,9 +79,11 @@ Warn:
 Password has been exposed in previous data breaches.
 ```
 
-## Usage (when installed in an specific context)
+# Usage (when installed in an specific context)
 
 If you want to use an specific function (default, memorable or validate password), run:
+
+## For default:
 
 ```sh
 node default.js <length> <includeUppercase> <includeNumbers> <includeSymbols>
@@ -93,7 +95,7 @@ The command will be something like:
 node default.js 10 true true true
 ```
 
-If an space is empty, it will be true by default.
+## For memorable:
 
 ```sh
 node memorable.js <includeUppercase> <includeNumbers> <includeSymbols>
@@ -105,7 +107,8 @@ The command will be something like:
 node memorable.js true true true
 ```
 Then, you will be ask for write the words you want to use.
-If an space is empty, it will be true by default.
+
+## For validate:
 
 ```sh
 node validate.js <password>
@@ -117,7 +120,9 @@ The command will be something like:
 node validate.js password123
 ```
 
-## Contributing
+Note that default.js and memorable.js return the variable "password", so you can use it in your project but validate.js returns a message if the password is pawned or not.
+
+# Contributing
 
 We welcome contributions to Passbird! If you're interested in improving this library, there are many ways you can contribute:
 
