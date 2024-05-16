@@ -1,10 +1,10 @@
 {
   "name": "passbird",
   "version": "2.1.1",
-  "description": "A npm's library for easy keygen and easy password validation",
+  "description": "An npm's library for easy keygen and easy password validation",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node ./bin/global.js"
   },
   "keywords": [
     "password",
@@ -41,7 +41,7 @@
     "password validator"
   ],
   "author": "Andrés Pájaro <andresmpajaro@gmail.com>",
-  "license": "ISC",
+  "license": "MIT",
   "bin": {
     "passbird": "./bin/global.js"
   },
