@@ -98,7 +98,7 @@ node default.js 10 true true true
 If you want to import it and use it in your project:
 
 ```sh
-import { generatDefaultePassword } from '../src/index.js';
+import { generatDefaultePassword } from '../node_modules/passbird/src/index.js';
 
 // Define arguments
 let length = 10;
@@ -126,7 +126,7 @@ Then, you will be ask for write the words you want to use.
 If you want to import it and use it in your project:
 
 ```sh
-import { generateMemorablePassword } from '../src/index.js';
+import { generateMemorablePassword } from '../node_modules/passbird/src/index.js';
 
 // Define arguments
 let includeUppercase = 'true';
@@ -152,7 +152,7 @@ node validate.js password123
 If you want to import it and use it in your project:
 
 ```sh
-import { validatePassword } from '../src/index.js';
+import { validatePassword } from '../node_modules/passbird/src/index.js';
 
 // Define the password
 let password = 'password123';
