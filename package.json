@@ -1,8 +1,8 @@
 {
   "name": "passbird",
   "version": "2.2.3",
-  "description": "An npm's library for easy keygen and easy password validation",
-  "main": "index.js",
+  "description": "A Node.js library for generating strong, memorable passwords and validating password security against known data breaches.",
+  "main": "src/index.js",
   "scripts": {
     "start": "node ./bin/global.js"
   },
@@ -50,6 +50,9 @@
     "axios": "^1.6.8",
     "inquirer": "^9.2.21",
     "sha1": "^1.1.1"
+  },
+  "exports": {
+    ".": "./src/index.js"
   },
   "type": "module"
 }

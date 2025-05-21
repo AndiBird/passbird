@@ -1,7 +1,9 @@
-
 # Passbird 🐦‍⬛
 
-Passbird is an npm library for generating and validating passwords.
+**Passbird is a Node.js library for generating strong, customizable passwords and validating their security against known data breaches. It can be used as a command-line tool or integrated into your JavaScript projects.**
+
+[![NPM Version](https://img.shields.io/npm/v/passbird.svg)](https://www.npmjs.com/package/passbird)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 # Installation
 
@@ -98,7 +100,7 @@ node default.js 10 true true true
 If you want to import it and use it in your project:
 
 ```sh
-import { generatDefaultePassword } from '../node_modules/passbird/src/index.js';
+import { generateDefaultPassword } from 'passbird';
 
 // Define arguments
 let length = 10;
@@ -107,7 +109,7 @@ let includeNumbers = 'true';
 let includeSymbols = 'true';
 
 // Call the function
-let password = generatDefaultePassword(length, includeUppercase, includeNumbers, includeSymbols);
+let password = generateDefaultPassword(length, includeUppercase, includeNumbers, includeSymbols);
 ```
 
 ## For memorable:
@@ -126,7 +128,7 @@ Then, you will be ask for write the words you want to use.
 If you want to import it and use it in your project:
 
 ```sh
-import { generateMemorablePassword } from '../node_modules/passbird/src/index.js';
+import { generateMemorablePassword } from 'passbird';
 
 // Define arguments
 let includeUppercase = 'true';
@@ -152,7 +154,7 @@ node validate.js password123
 If you want to import it and use it in your project:
 
 ```sh
-import { validatePassword } from '../node_modules/passbird/src/index.js';
+import { validatePassword } from 'passbird';
 
 // Define the password
 let password = 'password123';
@@ -162,6 +164,11 @@ validatePassword(password);
 ```
 
 Note that default.js and memorable.js return the variable "password", so you can use it in your project but validate.js returns a message if the password is breached or not.
+
+### Notes on Library Usage:
+
+*   **Memorable Password Input:** Currently, when `generateMemorablePassword` is imported, it interactively prompts for words. For non-interactive use, future versions may support passing words directly as a function argument.
+*   **Validate Password Return Value:** The `validatePassword` function currently returns a descriptive message. For more straightforward programmatic use (e.g., in conditional logic), future versions may return a boolean value or a more structured object indicating the validation status.
 
 # Contributing
 

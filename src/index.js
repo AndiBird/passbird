@@ -13,7 +13,7 @@ const characters = {
 };
 
 // generate a random password (default type)
-export function generatDefaultePassword(length, includeUppercase, includeNumbers, includeSymbols) {
+export function generateDefaultPassword(length, includeUppercase, includeNumbers, includeSymbols) {
     // create a character set based on the options
     let charSet = characters.lowercase;
     if (includeUppercase) charSet += characters.uppercase;
